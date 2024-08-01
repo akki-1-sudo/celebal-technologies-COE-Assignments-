@@ -1,0 +1,19 @@
+# Register the system
+sudo subscription-manager register --username=<your_Red_Hat_username> --password=<your_Red_Hat_password>
+
+# Attach subscription
+sudo subscription-manager attach --auto
+
+# Enable repositories
+sudo subscription-manager repos --enable=rhel-8-server-rpms
+sudo subscription-manager repos --enable=rhel-8-server-extras-rpms
+sudo subscription-manager repos --enable=rhel-8-server-optional-rpms
+
+# Update the system
+sudo yum update -y
+
+# Verify repository configuration
+yum repolist
+
+# Optional: Create a custom repository configuration
+sudo vi /etc/yum.repos.d/custom.repo
