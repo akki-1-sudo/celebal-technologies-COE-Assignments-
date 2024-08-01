@@ -1,0 +1,10 @@
+sudo groupadd sysadmin
+
+sudo useradd -G sysadmin natasha
+sudo useradd -G sysadmin harry
+
+echo "natasha:trootent" | sudo chpasswd
+echo "harry:trootent" | sudo chpasswd
+
+sudo useradd -s /sbin/nologin sarah
+echo "sarah:trootent" | sudo chpasswd
