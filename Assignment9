@@ -1,0 +1,5 @@
+# Search for the string 'ing' in input_file.txt and redirect the output to /root/lines
+grep 'ing' input_file.txt > /root/lines
+
+# If you need elevated permissions to write to /root/lines
+sudo grep 'ing' input_file.txt > /root/lines
