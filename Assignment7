@@ -1,0 +1,4 @@
+sudo mkdir /home/manager
+sudo chown :sysadmin /home/manager
+sudo chmod 770 /home/manager
+sudo chmod g+s /home/manager
