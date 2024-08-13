@@ -1,0 +1,5 @@
+Create an archive '/root/backup.tar.bz2' of /usr/local directory and compress it with
+bzip2
+
+
+tar -cjvf /root/backup.tar.bz2 /usr/local
