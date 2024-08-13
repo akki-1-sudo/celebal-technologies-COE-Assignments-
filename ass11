@@ -1,0 +1,5 @@
+sudo -u sarah touch /tmp/new.txt
+sudo chown natasha:natasha /tmp/new.txt
+sudo mkdir -p /etc/testing/app
+sudo cp /tmp/new.txt /etc/testing/app/
+sudo chmod 444 /etc/testing/app/new.txt
