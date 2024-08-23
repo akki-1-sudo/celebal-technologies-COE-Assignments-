@@ -1,0 +1,49 @@
+Step 1: Install Apache HTTP Server
+First, ensure that the Apache server is installed on your machine.
+
+
+For CentOS/RHEL:
+sudo yum install httpd
+Step 2: Start and Enable Apache Service
+
+For CentOS/RHEL:
+sudo systemctl start httpd
+sudo systemctl enable httpd
+Step 3: Configure Firewall (if applicable)
+Allow HTTP and HTTPS traffic through your firewall.
+
+
+For CentOS/RHEL with firewalld:
+sudo firewall-cmd --permanent --add-service=http
+sudo firewall-cmd --permanent --add-service=https
+sudo firewall-cmd --reload
+Step 4: Check the Web Server
+Open a web browser and visit http://localhost/ or http://<your-server-ip>/. You should see the default Apache welcome page.
+
+Step 5: Configure Virtual Hosts (Optional)
+If you want to host multiple websites, you can configure virtual hosts.
+
+Create a new configuration file:
+For CentOS/RHEL:
+sudo nano /etc/httpd/conf.d/yourdomain.conf
+Add the following configuration:
+
+
+<VirtualHost *:80>
+    ServerAdmin webmaster@yourdomain.com
+    ServerName yourdomain.com
+    ServerAlias www.yourdomain.com
+    DocumentRoot /var/www/yourdomain.com/public_html
+    ErrorLog ${APACHE_LOG_DIR}/error.log
+    CustomLog ${APACHE_LOG_DIR}/access.log combined
+</VirtualHost>
+Create the directory for your we:
+sudo mkdir -p /var/www/yourdomain.com/public_html
+sudo chown -R $USER:$USER /var/www/yourdomain.com/public_html
+
+For CentOS/RHEL, the site should already be active after creating the .conf file.
+
+Step 6: Test the Configuration
+Check that the configuration syntax is correct and restart Apache.
+
+sudo systemctl restart httpd     # For CentOS/RHEL
